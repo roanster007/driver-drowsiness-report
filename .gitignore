@@ -1,0 +1,15 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.pdf
+*.synctex.gz
+*.synctex(busy)
+*.lof
+*.lot
+*.tex.bak
