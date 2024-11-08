@@ -1,78 +1,57 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{setspace} % For controlling line spacing
+
+\usepackage{amsmath, amsthm, amssymb} % For mathematical symbols and environments
+\usepackage{graphicx} % For including figures
+\usepackage{hyperref} % For clickable references
+\usepackage{cite} % For citation management
+
+% Theorem-like environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{proofpart}{Proof}[theorem]
+
+\begin{document}
+\onehalfspacing
+
 \chapter{Introduction}
 
-Introductory lines...
+\section{Background}
+
+In today's fast-paced world, where everyone is constantly juggling  around work, social commitments, and personal responsibilities, getting enough sleep has become a luxury. This has taken a significant toll on several people's mental health, so much that the weariness can have extreme consequences when they get behind the wheel. Driving when drowsy significantly impairs reaction times, reduces alertness, and increases the risk of accidents.
+
+As per approximations furnished by the National Highway Traffic Safety Administration (NHTSA), driving while fatigued caused \$12.5 billion in economic loss, 71,000 injuries, and 1,550 fatalities. Statistics (NHTSA) [1] show that in 2017, accidents involving drowsy drivers resulted in 50,000 injuries and 795 fatalities. This calls for the need of a system in the vehicle, which can scan and alert the driver when signs of fatigue are recognized.
+
+One of the most accurate ways of detecting fatigue in driver is through physiological signals like heart rate, Electroencephalography (EEG), Electrocardiography (ECG or EKG), Respiration Rate, Body Temperature, etc. However, these methods are not really feasible, since they require expensive equipment, and a continuous direct contact with driver's body. Hence, we require a system that can detect drowsiness in driver through behavioral signals like eyes movement, opening and closing of mouth, head position, etc. 
+
+To address these challenges, We propose a lightweight novel transfer learning-based features generation which combines the strengths of the Visual Geometry Group (VGG-16) and Light Gradient-Boosting Machine (LGBM) methods. Experimental evaluations reveal that the k-neighbors classifier on the extracted features of eye lids outperformed the state-of-the-art approach with a high-performance accuracy of 99\%. The computational complexity analysis shows that the proposed approach detects driver drowsiness in 0.00829 seconds [2].
+
+However, predicting drowsiness just through facial features and triggering an alarm would seem some what a too bit far-fetched, and might result in certain False Positives. Hence, we aim to top it off by ensembling another multi-loss CNN to it, which estimates the Euler angles (pitch, roll, and yaw) of the driver's head, and use an empirical relation to determine excessive deflection of head. Through this interdisciplinary approach the system aims to combine the accuracies of individual models, and predict driver's fatigue with a greater accuracy.
 
 
 
-\section{Section-1 Name}
+\section{Goal}
+The main objectives of the work are:
+\begin{itemize}
 
-Some text here ...
+    \item Develop an integrated system comprising of an LGBM and a VGG based CNN model to detect driver drowsiness from facial features, coupled using ensemble techniques with another multi-loss CNN model which predicts extreme deflection in driver's head for enhanced accuracy.
 
-\begin{definition}\label{abc}
-Some definition....
-\end{definition}
+    \item Make the model as lightweight as possible, to make it robust and efficient so that it can be incorporated in day-to-day lives.
 
-\begin{theorem}
-Some theorem.......
-\end{theorem}
+    \item Incorporate a mechanism for the system to continuously learn and adapt to new data
 
-\begin{proof}
-Proof is as follows....
-\end{proof}
+    \item Fine tune the ensembled model for greater accuracies.
 
+\end{itemize}
 
-\begin{corollary}
-A corollary to the theorem is....
-\end{corollary}
+\section{Motivation}
+In today's fast-paced world, with everyone is constantly juggling  around work, social commitments, and personal responsibilities it becomes absolutely important to have a system to detect and alert a driver when he is drowsy, to prevent accidents. Physiological signals are not really feasible, since they require expensive equipment, and a continuous direct contact with driver's body. By leveraging advanced machine learning techniques like a novel transfer
+learning-based features generation with VGG and LGBM in a lightweight convolutional neural network, coupled with ensemble methods, we aim to enhance prediction accuracy and provide accurate signals for drowsiness detection. Making the model lightweight, robust and efficient to consume less energy makes it more usable in real-world scenarios.
 
-\begin{remark}
-Some remark.......
-\end{remark}
+\section{Problem Statement}
 
+Develop and evaluate an advanced driver drowsiness detection system that integrates multiple detection techniques to enhance its accuracy and robustness. The system should combine various measures, such as physiological, behavioural, and vehicle-based indicators, to identify drowsiness at different stages. This research will explore and compare different technologies and algorithms, including those based on eye activity, to assess their effectiveness in real-world conditions. The aim is to improve early drowsiness detection, minimize false positives and negatives, and provide insights into integrating these systems into broader driver assistance technologies to enhance overall road safety.
 
-You may have to type many equations inside the text.  The equation can be typed as below.
-\begin{equation}\label{eqn1}
-f(x) = \frac{x^2-5x+2}{e^x - 2} = {y^5-3 \over e^x-2} %\nonumber
-\end{equation}
-
-This can be referred as (\ref{eqn1}) and so on.....
-
-You may have to type a set of equations.  For this you may proceed as given below.
-\begin{eqnarray}
-f(x) &=& e^{1+2(x-a)} + \ldots   \nonumber   \\
-  &=& \log(x+a) + \sin(x+y) + \cdots  \label{eqn2}
-\end{eqnarray}
-
-% Note: \nonumber will suppress the eqn number in the above.  
-% You can type comments like this starting with % as here.
-
-You may have to cite the articles.  You may do so as \cite{golub} and so on.....
-Note that you have already created the `bib.bib' file and included the entry with the above name. Only
-then you can cite it as above.  
-
-\section{Section-2 Name}
-\begin{definition}\label{abc}
-Some definition....
-\end{definition}
-
-\begin{remark}
-Some remark.......
-\end{remark}
-
-\subsection{Subsection name}
-
-\begin{theorem}
-Some theorem.......
-\end{theorem}
-
-\begin{proof}
-Proof is as follows....
-\end{proof}
-
-
-\begin{figure}[h]
-
-[The figure will be displayed here.]
-
-\caption{The correlation coefficient as a function of $\rho$}
-\end{figure}
+\end{document}
