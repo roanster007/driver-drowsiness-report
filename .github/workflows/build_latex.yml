@@ -1,0 +1,34 @@
+name: LaTeX Build
+
+on:
+  push:
+    branches:
+      - main  # Trigger this action only when changes are pushed to the main branch (or the branch you use for merges)
+  pull_request:
+    branches:
+      - main  # This runs when a PR is opened, synchronized, or closed against the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up LaTeX environment
+        run: sudo apt-get update && sudo apt-get install -y texlive-full
+
+      - name: Compile LaTeX to PDF
+        run: pdflatex -interaction=nonstopmode report.tex
+
+      - name: Commit PDF to repository
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add report.pdf
+          git commit -m "Update report.pdf"
+          git push origin HEAD
+
+        # Only run this when changes happen (i.e., PDF needs to be updated)
+        if: ${{ github.event_name == 'push' }}
