@@ -1,0 +1,27 @@
+\chapter{Conclusion and Future Work}
+
+\section{Conclusion}
+
+In this study, we developed and evaluated several models for detecting driver drowsiness and distraction. The models included VGG16 with Batch Normalization, VGG16 with Learning Rate Scheduler, and a Lightweight CNN. The performance of these models was assessed using various evaluation metrics, including accuracy, precision, recall, and F1 score.
+
+The results demonstrated that the VGG16 with Batch Normalization model achieved the highest accuracy, precision, recall, and F1 score among the models evaluated. The Lightweight CNN model, while slightly less accurate, offered a good balance between computational efficiency and performance, making it suitable for real-time applications in driver monitoring systems.
+
+Overall, the models showed satisfactory performance in detecting driver drowsiness and distraction, indicating their potential for use in real-world applications. However, there were some limitations due to the combined dataset for eye and yawning detection, which led to a loss of information.
+
+\section{Future Work}
+
+To address the limitations and further improve the performance of the models, the following future work is proposed:
+
+\begin{itemize}
+    \item \textbf{Head Pose Estimation Model:} Develop and integrate a head pose estimation model that will run concurrently with the VGG16 model. By combining the results from both models, we can provide a more accurate assessment of the driver's risk level.
+    \item \textbf{Separate Models for Eye and Yawning Detection:} Currently, the combined dataset for eye and yawning detection leads to a loss of information. For example, when a driver yawns, their eyes automatically close, which can confuse the model. To mitigate this, we propose creating separate models for eye detection and yawning detection. This approach will help preserve the distinct information for each task.
+    \item \textbf{Data Collection:} To support the development of separate models for eye and yawning detection, we have already collected a large amount of data. Future work will involve further expanding this dataset to ensure robust training and evaluation of the models.
+    \item \textbf{Data Augmentation:} Implement additional data augmentation techniques to increase the diversity of the training dataset and improve the robustness of the models.
+    \item \textbf{Hyperparameter Tuning:} Perform extensive hyperparameter tuning to optimize the performance of the models.
+    \item \textbf{Complex Architectures:} Explore more complex architectures or pre-trained models to enhance the accuracy and generalization capabilities of the models.
+    \item \textbf{Real-time Implementation:} Develop and test real-time implementations of the models in actual driving scenarios to evaluate their performance in real-world conditions.
+    \item \textbf{Multi-modal Data:} Incorporate multi-modal data, such as physiological signals (e.g., heart rate, eye movement) and environmental factors (e.g., road conditions, weather), to improve the accuracy and reliability of the models.
+    \item \textbf{User Feedback:} Collect and analyze user feedback to identify areas for improvement and ensure the models meet the needs and expectations of end-users.
+\end{itemize}
+
+By addressing these areas, future research can further enhance the performance and applicability of driver drowsiness and distraction detection systems, contributing to improved road safety and reduced accident rates.
