@@ -1,27 +1,24 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage{setspace} % For controlling line spacing
 
-
-\begin{document}
 \onehalfspacing
+\begin{document}
 
 % Title for Abstract
 \begin{center}
-    \section*{\Large \bfseries ABSTRACT}
+    {\Large \bfseries ABSTRACT}
 \end{center}
 
 % Content of the Abstract
-The paper introduces an AI-Driven driver drowsiness detection system that aims to utilize two base models --- (i) one that utilizes a shallow convolutional neural network (CNN) with novel transfer learning-based features which combines the strengths of the Visual Geometry Group (VGG-16) and Light Gradient-Boosting Machine (LGBM) methods (ii) other that uses a multi-loss convolutional neural network. These models are ensembled through stacked generalization to enhance the drowsiness detection.
+The paper introduces an AI-Driven driver drowsiness detection system that aims to utilize two base models --- (i) one that utilizes a shallow convolutional neural network (CNN) with novel transfer learning-based features which combines the strengths of the Visual Geometry Group (VGG-16) and Light Gradient-Boosting Machine (LGBM) methods (ii) another that uses a multi-loss convolutional neural network. These models are ensembled through stacked generalization to enhance the drowsiness detection.
 
+The first base model predicts driver drowsiness using eye movement behavior, and opening and closing of the eyelids. First, a 68-point face landmark identification approach is used to identify faces and extract the eye areas. Then, these are passed through a lightweight CNN model, powered by VGG which generates salient transfer features using LGBM. A K-Nearest Neighbors classifier is used to detect the drowsiness using the features extracted.
 
-The first base model predicts driver drowsiness using eye movement behaviour, and opening and closing of the eye lids. First, a 68-point face landmark identification approach is
-used to identify faces and extract the eye areas. Then, these are passed through a lightweight CNN model, powered by VGG which  generates salient transfer features using LGBM. A K-Neighbour classifier is used to detect the drowsiness using the features extracted.
+The second base model utilizes a multi-loss convolutional neural network pre-trained on 300W-LP, a large synthetically expanded dataset, to predict the Euler angles of the head --- pitch, roll, and yaw directly from the images, through joint binned pose classification and regression. Then, excessive deviation of the driver's head posture is detected using an empirical relation among the Euler angles, to detect driver drowsiness.
 
-The second base model utilizes a multi-loss convolutional neural network pre-trained on 300W-LP, a large synthetically expanded dataset, to predict the Euler angles of head --- pitch, roll, and yaw directly from the images,  through joint binned pose classification and regression. Then, excessive deviation of driver's head posture is detected using an empirical relation among the Euler angles, to detect driver drowsiness.
+Ensemble techniques like stacked generalization are utilized to improve overall predictive performance by leveraging the strengths of each model variant.
 
-Ensemble techniques like stacked generalization is utilized to improve overall predictive performance by leveraging the strengths of each model variant.
-
-Overall, the system utilizes a lightweight CNN powered by VGG and LGBM methods to detect drowsiness from facial features, and aims to ensemble it with a multi-loss CNN to detect drowsiness from head posture, aiming to provide a robust system to detect drowsiness in driver, so as to alert the drivers to lower the number of accidents caused by weariness.
+Overall, the system utilizes a lightweight CNN powered by VGG and LGBM methods to detect drowsiness from facial features, and aims to ensemble it with a multi-loss CNN to detect drowsiness from head posture, aiming to provide a robust system to detect drowsiness in drivers, so as to alert the drivers to lower the number of accidents caused by weariness.
 
 \clearpage
 
