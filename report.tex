@@ -35,13 +35,13 @@
 
 % --------------- Title page -----------------------
 \begin{titlepage}
-\enlargethispage{2cm}
+\enlargethispage{5cm}
 
 \begin{center}
 
 \vspace*{-1cm}
 
-\textbf{\Large [PROJECT TITLE IN CAPITAL LETTERS]}\\[10pt]
+\textbf{\Large An Academia Recommendation System using Community Detection based on GEAM in Multiplex Networks}\\[10pt]
 
 \vspace*{2 cm}
 
@@ -50,14 +50,17 @@
                      in Partial Fulfilment of the Requirements  \\
                      for the Degree of  \\
                           \vspace{4.5mm}
-                   {\Large \bf [TYPE DEGREE NAME] } \\
+                   {\Large \bf BACHELOR OF TECHNOLOGY } \\
                    in \\
-                   {\large \bf [TYPE DEPARTMENT NAME] } \\
+                   {\large \bf COMPUTER SCIENCE AND ENGINEERING } \\
 
                       \vspace{9mm}
                    {\em  by} \\ \vspace{2.5mm}
-             {\large \bf [Type your full name]} \\
-{\large \bf (Roll No. [Type your roll no.])}\\[.35in]
+             {\large \bf Neeraj P Yetheendran - 2021BCS0106 } \\
+             {\large \bf Korlepara Sai Saranya - 2021BCS0045 } \\
+             {\large \bf Baggam Naga Jayadeep - 2021BCS0179 } \\
+             {\large \bf Abhay Kumar - 2021BCS0087 } \\
+
 
 \vfill
 %\includegraphics[width=12cm, height=12cm]{iiserlogo}
@@ -88,25 +91,27 @@
 %\thispagestyle{empty}
 
 
-\noindent I, \textbf{[Your Name]} (\textbf{Roll No: [Your roll
-number]}), hereby declare that, this report entitled
-\textbf{``[Title of the project report]''} submitted to Indian
+\noindent We, \textbf{Neeraj P Yetheendran} (\textbf{Roll No: 2021BCS0106}), \textbf{Korlepara Sai Saranya} (\textbf{Roll No: 2021BCS0045}), \textbf{Baggam Naga Jayadeep} (\textbf{Roll No: 2021BCS0179}), \textbf{Abhay Kumar} (\textbf{Roll No: 2021BCS0087})  hereby declare that this report entitled
+\textbf{``An Academia Recommendation System using Community Detection based on GEAM in Multiplex Networks''} submitted to Indian
 Institute of Information Technology Kottayam towards partial
-requirement of {\bf Bachelor of Technology/Bachelor of
-Technology(Hon)/Master of Science} in \textbf{[Department  Name]}
-is an original work carried out by me under the supervision of
-\textbf{[Faculty Name]} and has not formed the basis for the award
+requirement of {\bf Bachelor of Technology} in \textbf{Computer Science Engineering}
+is an original work carried out by us under the supervision of
+\textbf{Dr. Divya Sindhu Lekha} and has not formed the basis for the award
 of any degree or diploma, in this or any other institution or
-university. I have sincerely tried to uphold the academic ethics
+university. We have sincerely tried to uphold the academic ethics
 and honesty. Whenever an external information or statement or
 result is used then, that have been duly acknowledged and cited.
 
 \vspace{4cm}
 
-\noindent Kottayam-686635 \hfill \textbf{[Your Name]}
-
+\noindent Kottayam-686635 
+\hfill 
+\textbf{Neeraj P Yetheendran - Roll No: 2021BCS0106}
 \noindent November  2024
-
+\hfill
+\textbf{Korlepara Sai Saranya - Roll No: 2021BCS0045}
+\rightline{\textbf{Baggam Naga Jayadeep - Roll No: 2021BCS0179}}
+\rightline{ \textbf{Abhay Kumar - Roll No: 2021BCS0087}}
 \clearpage
 
 
@@ -119,19 +124,20 @@ result is used then, that have been duly acknowledged and cited.
 
 
 \noindent This is to certify that the work contained in this
-project report entitled \textbf{``[Title of the project report]''}
-submitted by \textbf{[Your Name]} (\textbf{Roll No: [Your roll
-number]}) to the Indian Institute of Information Technology Kottayam
+project report entitled \textbf{``An Academia Recommendation System using
+Community Detection based on GEAM in
+Multiplex Networks''}
+submitted by \textbf{Neeraj P Yetheendran} (\textbf{Roll No: 2021BCS0106}), \textbf{Korlepara Sai Saranya} (\textbf{Roll No: 2021BCS0045}), \textbf{Baggam Naga Jayadeep} (\textbf{Roll No: 2021BCS0179}), \textbf{Abhay Kumar} (\textbf{Roll No: 2021BCS0087}) to the Indian Institute of Information Technology Kottayam
 towards partial requirement of {\bf Bachelor of
-Technology/Bachelor of Technology(Hon)/Master of Science} in
-\textbf{[School Name]} has been carried out by [him/her] under my
-supervision and that it has not been submitted elsewhere for the
+Technology} in
+\textbf{Indian Institute
+of Information Technology, Kottayam} has been carried out by them under my supervision and that it has not been submitted elsewhere for the
 award of any degree.
 
 
 \vspace{4cm}
 
-\noindent Kottayam-686635  \hfill (Dr. XYZ)
+\noindent Kottayam-686635  \hfill (Dr. Divya Sindhu Lekha)
 
 \noindent November  2024 \hfill Project Supervisor
 
@@ -143,25 +149,79 @@ award of any degree.
 
 
 % --------------- Abstract page -----------------------
-\input abstract.tex
+\begin{center}
+{\Large{\bf{ABSTRACT}}}
+\end{center}
+
+The paper introduces an AI-Driven driver drowsiness detection system that aims to utilize two base models --- (i) one that utilizes a shallow convolutional neural network (CNN) with novel transfer learning-based features which combines the strengths of the Visual Geometry Group (VGG-16) and Light Gradient-Boosting Machine (LGBM) methods (ii) other that uses a multi-loss convolutional neural network. These models are ensembled through stacked generalization to enhance the drowsiness detection.
+
+
+The first base model predicts driver drowsiness using eye movement behaviour, and opening and closing of the eye lids. First, a 68-point face landmark identification approach is
+used to identify faces and extract the eye areas. Then, these are passed through a lightweight CNN model, powered by VGG which  generates salient transfer features using LGBM. A K-Neighbour classifier is used to detect the drowsiness using the features extracted.
+
+The second base model utilizes a multi-loss convolutional neural network pre-trained on 300W-LP, a large synthetically expanded dataset, to predict the Euler angles of head --- pitch, roll, and yaw directly from the images,  through joint binned pose classification and regression. Then, excessive deviation of driver's head posture is detected using an empirical relation among the Euler angles, to detect driver drowsiness.
+
+Ensemble techniques like stacked generalization is utilized to improve overall predictive performance by leveraging the strengths of each model variant.
+
+Overall, the system utilizes a lightweight CNN powered by VGG and LGBM methods to detect drowsiness from facial features, and aims to ensemble it with a multi-loss CNN to detect drowsiness from head posture, aiming to provide a robust system to detect drowsiness in driver, so as to alert the drivers to lower the number of accidents caused by weariness.
+
+
+
+
+
+
+
+\clearpage
+
+
+\pagenumbering{roman}
+\setcounter{page}{5}
+
+
+\clearpage
+
+\tableofcontents
+\clearpage
+
+
+
+\section*{List of Figures}
+
+\begin{itemize}
+    \item[3.1] Model Architecture \dotfill 15
+    \item[3.2]
+    \dotfill 37
+\end{itemize}
+\clearpage
+
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+
+
+
+% --------------- Abstract page -----------------------
+% \input abstract.tex
 
 % =========== Main chapters starts here. Type in seperate files and include the filename here. ==
 % ============================
 
-\input chapter1.tex
 
-\input chapter2.tex
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+\input{chapter4.tex}
+\input{chapter5.tex}
 
-\input chapter3.tex
-
-\input chapter4.tex
-
-\input bibliography.tex
 
 
 
 \nocite{golub} \nocite{gerla}\nocite{m1}\nocite{chang}
 \bibliographystyle{plain}
-\bibliography{bib}
+\bibliography{ref}
 
 \end{document}
