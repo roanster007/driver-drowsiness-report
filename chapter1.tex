@@ -1,21 +1,3 @@
-\documentclass[a4paper,12pt]{report}
-\usepackage{setspace} % For controlling line spacing
-
-\usepackage{amsmath, amsthm, amssymb} % For mathematical symbols and environments
-\usepackage{graphicx} % For including figures
-\usepackage{hyperref} % For clickable references
-\usepackage{cite} % For citation management
-
-% Theorem-like environments
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{definition}{Definition}[section]
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{remark}{Remark}[section]
-\newtheorem{proofpart}{Proof}[theorem]
-
-\begin{document}
-\onehalfspacing
-
 \chapter{Introduction}
 
 \section{Background}
@@ -31,7 +13,7 @@ To address these challenges, We propose a lightweight novel transfer learning-ba
 However, predicting drowsiness just through facial features and triggering an alarm would seem some what a too bit far-fetched, and might result in certain False Positives. Hence, we aim to top it off by ensembling another multi-loss CNN to it, which estimates the Euler angles (pitch, roll, and yaw) of the driver's head, and use an empirical relation to determine excessive deflection of head. Through this interdisciplinary approach the system aims to combine the accuracies of individual models, and predict driver's fatigue with a greater accuracy.
 
 
-
+\vspace{10in}
 \section{Goal}
 The main objectives of the work are:
 \begin{itemize}
@@ -54,4 +36,4 @@ learning-based features generation with VGG and LGBM in a lightweight convolutio
 
 Develop and evaluate an advanced driver drowsiness detection system that integrates multiple detection techniques to enhance its accuracy and robustness. The system should combine various measures, such as physiological, behavioural, and vehicle-based indicators, to identify drowsiness at different stages. This research will explore and compare different technologies and algorithms, including those based on eye activity, to assess their effectiveness in real-world conditions. The aim is to improve early drowsiness detection, minimize false positives and negatives, and provide insights into integrating these systems into broader driver assistance technologies to enhance overall road safety.
 
-\end{document}
+
